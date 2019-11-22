@@ -1,0 +1,14 @@
+<h1> Birth a child </h1>
+
+<%= form_for @student do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :age %>
+    <%= f.number_field :age %>
+    <br>
+<h15> Select School Pwease </h15> 
+    <%= f.collection_select :school, @schools, :id, :name, prompt: true %>
+    <br>
+    <%= f.submit %>
+  <% end %>

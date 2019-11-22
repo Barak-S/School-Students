@@ -1,2 +1,6 @@
-<h1>School#show</h1>
-<p>Find me in app/views/school/show.html.erb</p>
+<h1><%= @school.name %></h1>
+<% @students.each do |student| %>
+    <p><%= link_to student.name, student_path(student) %></p>
+    <%= button_to "Delete", {:action=>"delete", :controller=>"students", :id=>student.id}, method: :delete  %>
+    <hr>
+<% end %>
